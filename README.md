@@ -36,7 +36,7 @@ This repo aims to have the following features:
 
 ## Getting Credit
 
-- [ ] Code coverage of _all_ JS code
+- [x] Code coverage of _all_ JS code
   - [ ] even when code runs in a browser test
 - [ ] Code coverage of CSS files (from running tests)
 - [ ] Include accessibility tests and reports
