@@ -4,6 +4,10 @@ export interface IHelloProps { name: string }
 
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the '{}' type.
+/**
+ * Example component that is used to show that compiling, testing,
+ * and documenting works.
+ */
 export class Hello extends React.Component<IHelloProps, {}> {
     public render() {
         console.log('Test that line numbers in Jest match') // tslint:disable-line:no-console

@@ -1,7 +1,11 @@
 {
   "scripts": {
     "build": "webpack",
-    "lint": "tslint --fix --config ./tslint.json --project ./ --format stylish",
+    "docs": "typedoc --ignoreCompilerErrors --mode modules --excludePrivate --excludeExternals --theme minimal --readme ./README.md --out ./docs/ ./src/",
+    "lint:ts": "tslint --fix --config ./tslint.json --project ./ --format stylish",
+    "lint:js": "standard --fix ./*.js ./src/**/*.js ./**/__test__/**/*.js",
+    "lint:markdown": "markdownlint --ignore 'node_modules' ./*.md ./**/*.md",
+    "lint": "npm run-script lint:ts && npm run-script lint:js && npm run-script lint:markdown",
     "test": "jest",
     "pretest": "npm run-script build",
     "posttest": "npm run-script lint"
@@ -14,11 +18,15 @@
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
     "awesome-typescript-loader": "^5.2.1",
+    "hard-source-webpack-plugin": "^0.12.0",
     "jest": "^23.6.0",
+    "markdownlint-cli": "^0.13.0",
     "source-map-loader": "^0.2.4",
+    "standard": "^12.0.1",
     "ts-jest": "^23.1.4",
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.12.0",
     "typescript": "^3.0.3",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"
