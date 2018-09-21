@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 import { Hello } from './components/Hello'
-import {throwErrorNow, throwErrorAfterDelay} from './testErrorHandling'
+import { throwErrorAfterDelay, throwErrorNow } from './testErrorHandling'
 
 // The test harness needs to define this variable globally (so this code can set it)
 declare var TEST_COMPONENTS: any
@@ -16,7 +16,7 @@ if ('IS_TESTING' in window) {
         throwErrorNow,
         throwErrorAfterDelay
     }
-    if (!!TEST_COMPONENTS) {
+    if (TEST_COMPONENTS) {
         // just to make TypeScript happy
     }
 } else {

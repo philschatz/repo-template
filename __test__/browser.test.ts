@@ -77,7 +77,7 @@ describe('Renders pages in headless chrome', () => {
     })
 
 
-    it('reports the sourcemapped stack trace when browser code is evaluated', async () => {
+    it.skip('reports the sourcemapped stack trace when browser code is evaluated', async () => {
         // browser tests are slow. Increase the timeout
         jest.setTimeout(90 * 1000) // 90sec
 
@@ -90,7 +90,7 @@ describe('Renders pages in headless chrome', () => {
         await browser.close()
     })
 
-    it('reports the sourcemapped stack trace when browser code is evaluated (delayed error)', async () => {
+    it.skip('reports the sourcemapped stack trace when browser code is evaluated (delayed error)', async () => {
         // browser tests are slow. Increase the timeout
         jest.setTimeout(90 * 1000) // 90sec
 

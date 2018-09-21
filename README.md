@@ -8,7 +8,8 @@ This repo aims to have the following features:
   - [x] for JS in production
   - [x] source lines in Jest console messages and stacktraces
   - [ ] also CSS
-- [x] Stack traces in browser tests should use source maps (not line numbers in minified files)
+- [x] Stack traces in browser tests should use source maps,
+    not line numbers of minified files (see [example Travis Log][sm-exn])
 
 ## Fast Development
 
@@ -47,3 +48,5 @@ Getting started should be easy. Here are some options:
 
 - [ ] `./script/setup && ./script/test`
 - [ ] `Dockerfile` ?
+
+[sm-exn]:https://travis-ci.org/philschatz/repo-template/builds/431628513#L492
