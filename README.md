@@ -8,7 +8,7 @@ This repo aims to have the following features:
   - [x] for JS in production
   - [x] source lines in Jest console messages and stacktraces
   - [ ] also CSS
-- [ ] Load sourcemaps into browser tests (`puppeteer`)
+- [x] Stack traces in browser tests should use source maps (not line numbers in minified files)
 
 ## Fast Development
 

@@ -2,7 +2,7 @@ const path = require('path')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: process.env.NODE_ENV || 'production',
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
@@ -31,10 +31,10 @@ module.exports = {
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
-  },
+  //   externals: {
+  //     'react': 'React',
+  //     'react-dom': 'ReactDOM'
+  //   },
   plugins: [
     new HardSourceWebpackPlugin()
   ]

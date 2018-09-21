@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Test Harness</title>
+    <!-- <link rel="stylesheet" href="./harness.css"/> -->
+</head>
+
+<body>
+    <div id="mainContentArea"></div>
+    <!-- Set a flag so we do not automatically start the app -->
+    <script>window.IS_TESTING = true; window.TEST_COMPONENTS = {} // these will be filled in by index.ts</script>
+    <!-- Run the JS after so the DOM node is available -->
+    <script async="async" src="../../dist/bundle.js"></script>
+</body>
+
+</html>
