@@ -96,8 +96,8 @@ describe('Renders pages in headless chrome', () => {
 
         const {page, browser} = await startBrowser(HARNESS_FILE)
         await evaluateWithStackTrace(page, () => {
-            const { throwErrorDelay } = window.TEST_COMPONENTS
-            throwErrorDelay(1 * 1000)
+            const { throwErrorAfterDelay } = window.TEST_COMPONENTS
+            throwErrorAfterDelay(1 * 1000)
         })
         await sleep(5 * 1000) // wait for an exception to occur
         await browser.close()
