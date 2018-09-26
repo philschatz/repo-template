@@ -24,6 +24,13 @@ module.exports = {
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
+      // instrument only testing sources with Istanbul
+    //   {
+    //     test: /\.js$/,
+    //     use: { loader: 'istanbul-instrumenter-loader' },
+    //     exclude: /node_modules/
+    //     // include: path.resolve('src/components/')
+    //   }
     ]
   },
 

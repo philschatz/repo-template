@@ -28,9 +28,12 @@
     "codecov": "^3.1.0",
     "hard-source-webpack-plugin": "^0.12.0",
     "istanbul": "^0.4.5",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "jest": "^23.6.0",
     "markdownlint-cli": "^0.13.0",
+    "nyc": "^13.0.1",
     "puppeteer": "^1.8.0",
+    "puppeteer-to-istanbul": "^1.2.2",
     "source-map-loader": "^0.2.4",
     "sourcemapped-stacktrace-node": "github:philschatz/sourcemapped-stacktrace-node#6cbdadf3567346e9f6e590e86b72e813dc72873c",
     "standard": "^12.0.1",
@@ -43,6 +46,8 @@
     "webpack-cli": "^3.1.0"
   },
   "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "moduleFileExtensions": [
       "ts",
       "tsx",
