@@ -23,7 +23,7 @@ This repo aims to have the following features:
 - [ ] Lint files (`npm run lint`)
   - [x] TypeScript (`.ts`, `.tsx`)
   - [x] JavaScript
-  - [ ] SASS
+  - [x] SASS/CSS
   - [ ] JSON
   - [ ] Shell scripts
   - [x] Markdown files
