@@ -10,7 +10,7 @@
     "lint:css": "stylelint --fix --custom-formatter='./node_modules/stylelint-formatter-pretty' './__test__/**/*.css' './__test__/**/*.xhtml'",
     "lint:markdown": "markdownlint --ignore 'node_modules' ./*.md ./**/*.md",
     "lint": "npm run-script lint:ts && npm run-script lint:js && npm run-script lint:css && npm run-script lint:markdown",
-    "test": "jest --coverage --updateSnapshot --verbose",
+    "test": "jest --coverage --updateSnapshot --verbose --collectCoverageFrom='./**/__test__/**/*.ts*'",
     "test:dev": "NODE_ENV=development npm run-script test",
     "test:debug": "NODE_ENV=development node --inspect-brk -r source-map-support/register $(npm bin)/jest -i --updateSnapshot $@",
     "pretest": "npm run-script build",
