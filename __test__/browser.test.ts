@@ -32,10 +32,15 @@ async function startBrowser(url: string) {
     })
 
     page.on('pageerror', async (e) => {
-        const newStack = await mapStackTrace(e/*.message*/, { isChromeOrEdge: true })
-        console.error(`BUG: Browser threw an Error!`)
-        console.error(e)
-        console.error(newStack)
+        let newStack = ''
+        if (e['stack'] && typeof e['stack'] === 'string') {
+            const newStack = await mapStackTrace(e/*.message*/, { isChromeOrEdge: true })
+            console.error(`BUG: Browser threw an Error!`)
+            console.error(e)
+            console.error(newStack)
+        } else {
+            throw e
+        }
         expect(newStack).toBeNull() // Just cause Jest to fail
         // throw new Error(newStack)
     })
@@ -50,10 +55,12 @@ async function evaluateWithStackTrace(page: puppeteer.Page, fn: puppeteer.Evalua
         return await page.evaluate(fn, ...args)
     } catch (e) {
         const stack = e.stack
-        const message = stack.split('\n')[0]
-        const newStack = await mapStackTrace(stack, { isChromeOrEdge: true })
-        console.error(`${message}\n${newStack}`)
-        e.stack = newStack
+        if (typeof stack === 'string') {
+            const message = stack.split('\n')[0]
+            const newStack = await mapStackTrace(stack, { isChromeOrEdge: true })
+            console.error(`${message}\n${newStack}`)
+            e.stack = newStack
+        }
         throw e
     }
 }
