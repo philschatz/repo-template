@@ -16,6 +16,7 @@ This repo aims to have the following features:
 - [x] Build TypeScript, and React (`.tsx`) files for code and tests (`npm run build`)
   - [ ] also SASS
 - [x] Use an incremental build system because webpack is slow (from 6sec to .2sec)
+- [x] use Redux
 - [ ] Start a hot-reload development webserver
 
 ## Easy Readability
